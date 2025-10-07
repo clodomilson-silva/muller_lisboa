@@ -1,0 +1,78 @@
+/* Estilos para acessibilidade e melhorias gerais */
+
+/* Foco visível para navegação por teclado */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Animações respeitando preferências do usuário */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Melhorias para impressão */
+@media print {
+  .header,
+  .footer,
+  .hero-actions,
+  .services-cta,
+  .portfolio-cta,
+  .contact-form {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* Estados de carregamento */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Scrollbar personalizada para navegadores webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue-dark);
+}
+
+/* Melhorias para seleção de texto */
+::selection {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+::-moz-selection {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}

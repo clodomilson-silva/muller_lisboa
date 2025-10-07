@@ -1,0 +1,19 @@
+.App {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling para toda a página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos para seções com padding */
+section {
+  position: relative;
+}
+
+/* Ajuste para navegação com header fixo */
+section[id] {
+  scroll-margin-top: 80px;
+}
