@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="footer-logo-text">Muller & Lisboa</span>
             </div>
             <p className="footer-description">
-              Construindo o futuro com excelência há mais de 15 anos. 
+              Construindo o futuro com excelência há mais de 2 anos. 
               Sua construtora de confiança para projetos residenciais, 
               comerciais e industriais.
             </p>
@@ -58,21 +58,21 @@ const Footer = () => {
               <div className="contact-info-item">
                 <Phone size={16} />
                 <div>
-                  <p>(11) 99999-9999</p>
-                  <p>(11) 3456-7890</p>
+                  <p>(51) 99006-5115</p>
+                  <p>(51) 99792-0878</p>
                 </div>
               </div>
               <div className="contact-info-item">
                 <Mail size={16} />
                 <div>
-                  <p>contato@mullerlisboa.com.br</p>
+                  <p>mullerelisboaconstrutora@gmail.com</p>
                 </div>
               </div>
               <div className="contact-info-item">
                 <MapPin size={16} />
                 <div>
-                  <p>Rua das Construções, 123</p>
-                  <p>São Paulo - SP, 01234-567</p>
+                  <p>Nestor Bunecker, 362</p>
+                  <p>Santa Cruz do Sul - RS, 96821-280</p>
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>&copy; 2024 Muller & Lisboa Construtora. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Muller & Lisboa Construtora. Todos os direitos reservados.</p>
             <p>Desenvolvido com ❤️ para construir o futuro</p>
           </div>
         </div>

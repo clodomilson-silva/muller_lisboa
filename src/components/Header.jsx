@@ -29,9 +29,9 @@ const Header = () => {
           </nav>
 
           <div className="header-actions">
-            <a href="tel:+5511999999999" className="phone-btn">
+            <a href="tel:+5551990065115" className="phone-btn">
               <Phone size={18} />
-              <span>(11) 99999-9999</span>
+              <span>(51) 990065115</span>
             </a>
             
             <button className="menu-toggle" onClick={toggleMenu}>

@@ -11,7 +11,7 @@ const Hero = () => {
           <div className="hero-text">
             <h1>Construindo o <span className="text-primary">Futuro</span> com Excelência</h1>
             <p className="hero-description">
-              Há mais de 15 anos no mercado, a Muller & Lisboa oferece soluções completas 
+              Há mais de 2 anos no mercado, a Muller & Lisboa oferece soluções completas 
               em construção civil e engenharia, sempre com qualidade, pontualidade e confiança.
             </p>
             

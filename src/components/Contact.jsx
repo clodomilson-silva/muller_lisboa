@@ -59,8 +59,8 @@ const Contact = () => {
                 </div>
                 <div className="contact-details">
                   <h4>Telefone</h4>
-                  <p>(11) 99999-9999</p>
-                  <p>(11) 3456-7890</p>
+                  <p>(51) 99006-5115</p>
+                  <p>(51) 99792-0878</p>
                 </div>
               </div>
 
@@ -70,7 +70,7 @@ const Contact = () => {
                 </div>
                 <div className="contact-details">
                   <h4>E-mail</h4>
-                  <p>contato@mullerlisboa.com.br</p>
+                  <p>mullerelisboaconstrutora@gmail.com</p>
                   <p>orcamento@mullerlisboa.com.br</p>
                 </div>
               </div>
@@ -81,8 +81,8 @@ const Contact = () => {
                 </div>
                 <div className="contact-details">
                   <h4>Endereço</h4>
-                  <p>Rua das Construções, 123</p>
-                  <p>São Paulo - SP, 01234-567</p>
+                  <p>Nestor Bunecker, 362</p>
+                  <p>Santa Cruz do Sul - RS, 96821-280</p>
                 </div>
               </div>
 
@@ -101,7 +101,7 @@ const Contact = () => {
             <div className="whatsapp-cta">
               <h4>Atendimento via WhatsApp</h4>
               <p>Para maior agilidade, entre em contato pelo WhatsApp</p>
-              <a href="https://wa.me/5511999999999" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5551990065115" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
                 <Phone size={20} />
                 Chamar no WhatsApp
               </a>
