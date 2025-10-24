@@ -6,7 +6,7 @@ const About = () => {
   const stats = [
     {
       icon: <Calendar size={32} />,
-      number: "15+",
+      number: "2+",
       label: "Anos de Experiência"
     },
     {
@@ -34,22 +34,23 @@ const About = () => {
             <h2>Sobre a <span className="text-primary">Muller & Lisboa</span></h2>
             <p className="about-description">
               Fundada com o compromisso de entregar excelência em cada projeto, a Muller & Lisboa 
-              é uma empresa especializada em construção civil que atende diversos segmentos do mercado.
+              é uma empresa especializada em construção civil e montagem industrial que atende diversos segmentos do mercado.
             </p>
             
             <div className="about-features">
               <div className="feature-block">
                 <h4>Nossa Missão</h4>
                 <p>
-                  Transformar sonhos em realidade através de construções de qualidade superior, 
-                  sempre respeitando prazos e orçamentos estabelecidos.
+                  A nossa missão e a nossa atividade é fabricar spool e suporte para tubulação, equipamentos
+                  rotativos estáticos pipe rack entre outros segmentos industriais, com qualidade, segurança e
+                  respeito ao meio ambiente, buscando a satisfação total de nossos clientes.
                 </p>
               </div>
               
               <div className="feature-block">
                 <h4>Nossa Visão</h4>
                 <p>
-                  Ser reconhecida como referência em construção civil na região, destacando-se 
+                  Ser reconhecida como referência em construção civil e montagem industrial na região, destacando-se 
                   pela inovação, sustentabilidade e satisfação do cliente.
                 </p>
               </div>

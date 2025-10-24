@@ -6,13 +6,13 @@ const Services = () => {
   const services = [
     {
       icon: <Home size={40} />,
-      title: "Construção Residencial",
+      title: "Construção Civil",
       description: "Casas, sobrados e condomínios residenciais com acabamento de primeira qualidade.",
       features: ["Projetos personalizados", "Acompanhamento técnico", "Garantia de qualidade"]
     },
     {
       icon: <Building size={40} />,
-      title: "Construção Comercial",
+      title: "Montagem Industrial",
       description: "Prédios comerciais, lojas, escritórios e espaços corporativos modernos.",
       features: ["Soluções corporativas", "Prazos otimizados", "Tecnologia avançada"]
     },

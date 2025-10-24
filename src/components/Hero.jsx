@@ -12,17 +12,17 @@ const Hero = () => {
             <h1>Construindo o <span className="text-primary">Futuro</span> com Excelência</h1>
             <p className="hero-description">
               Há mais de 2 anos no mercado, a Muller & Lisboa oferece soluções completas 
-              em construção civil e engenharia, sempre com qualidade, pontualidade e confiança.
+              em construção civil e montagem industrial, sempre com qualidade, pontualidade e confiança.
             </p>
             
             <div className="hero-features">
               <div className="feature-item">
                 <CheckCircle size={20} className="feature-icon" />
-                <span>Projetos Residenciais</span>
+                <span>Construção Civil</span>
               </div>
               <div className="feature-item">
                 <CheckCircle size={20} className="feature-icon" />
-                <span>Construção Comercial</span>
+                <span>Montagem Industrial</span>
               </div>
               <div className="feature-item">
                 <CheckCircle size={20} className="feature-icon" />
@@ -48,7 +48,7 @@ const Hero = () => {
                 <p>Projetos Entregues</p>
               </div>
               <div className="floating-card card-2">
-                <h4>15+</h4>
+                <h4>2+</h4>
                 <p>Anos de Experiência</p>
               </div>
               <div className="floating-card card-3">

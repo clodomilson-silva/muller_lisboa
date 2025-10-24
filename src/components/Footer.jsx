@@ -14,8 +14,8 @@ const Footer = () => {
             </div>
             <p className="footer-description">
               Construindo o futuro com excelência há mais de 2 anos. 
-              Sua construtora de confiança para projetos residenciais, 
-              comerciais e industriais.
+              Sua construtora de confiança para projetos de construção civil e
+              montagem industrial.
             </p>
             <div className="social-links">
               <a href="#" aria-label="Facebook">
