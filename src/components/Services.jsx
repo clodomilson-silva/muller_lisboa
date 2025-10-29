@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Building, Wrench, Hammer, ArrowRight } from 'lucide-react';
+import { Home, Building, Wrench, Hammer } from 'lucide-react';
 import './Services.css';
 
 const Services = () => {
@@ -51,11 +51,6 @@ const Services = () => {
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
-              
-              <button className="service-btn">
-                Saiba Mais
-                <ArrowRight size={16} />
-              </button>
             </div>
           ))}
         </div>
@@ -64,9 +59,9 @@ const Services = () => {
           <div className="cta-content">
             <h3>Precisa de um projeto personalizado?</h3>
             <p>Nossa equipe está pronta para transformar suas ideias em realidade.</p>
-            <button className="cta-button">
+            <a href="#contato" className="cta-button">
               Solicitar Orçamento Gratuito
-            </button>
+            </a>
           </div>
         </div>
       </div>
