@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './Portfolio.css';
+
+// Imagens placeholder - substitua pelos caminhos corretos quando adicionar as imagens reais
+const project1 = 'https://via.placeholder.com/600x400/0066CC/FFFFFF?text=Projeto+1';
+const project2 = 'https://via.placeholder.com/600x400/0066CC/FFFFFF?text=Projeto+2';
+const project3 = 'https://via.placeholder.com/600x400/0066CC/FFFFFF?text=Projeto+3';
+const project4 = 'https://via.placeholder.com/600x400/0066CC/FFFFFF?text=Projeto+4';
+const project5 = 'https://via.placeholder.com/600x400/0066CC/FFFFFF?text=Projeto+5';
+const project6 = 'https://via.placeholder.com/600x400/0066CC/FFFFFF?text=Projeto+6';
 
 const Portfolio = () => {
   const [currentFilter, setCurrentFilter] = useState('all');
@@ -19,7 +26,8 @@ const Portfolio = () => {
       category: "residential",
       description: "Condomínio residencial com 50 unidades, área de lazer completa.",
       area: "2.500m²",
-      year: "2023"
+      year: "2023",
+      image: project1
     },
     {
       id: 2,
@@ -27,7 +35,8 @@ const Portfolio = () => {
       category: "commercial",
       description: "Complexo comercial moderno com 30 lojas e escritórios.",
       area: "4.200m²",
-      year: "2023"
+      year: "2023",
+      image: project2
     },
     {
       id: 3,
@@ -35,7 +44,8 @@ const Portfolio = () => {
       category: "industrial",
       description: "Galpão industrial com estrutura metálica e sistema automatizado.",
       area: "8.000m²",
-      year: "2022"
+      year: "2022",
+      image: project3
     },
     {
       id: 4,
@@ -43,7 +53,8 @@ const Portfolio = () => {
       category: "residential",
       description: "Casa de alto padrão com design contemporâneo e sustentável.",
       area: "450m²",
-      year: "2023"
+      year: "2023",
+      image: project4
     },
     {
       id: 5,
@@ -51,7 +62,8 @@ const Portfolio = () => {
       category: "commercial",
       description: "Prédio comercial de 12 andares no centro da cidade.",
       area: "6.500m²",
-      year: "2022"
+      year: "2022",
+      image: project5
     },
     {
       id: 6,
@@ -59,7 +71,8 @@ const Portfolio = () => {
       category: "industrial",
       description: "Planta industrial para processamento de alimentos orgânicos.",
       area: "5.200m²",
-      year: "2024"
+      year: "2024",
+      image: project6
     }
   ];
 
@@ -93,9 +106,11 @@ const Portfolio = () => {
           {filteredProjects.map(project => (
             <div key={project.id} className="portfolio-card">
               <div className="portfolio-image">
-                <div className="image-placeholder">
-                  <span>Projeto {project.title}</span>
-                </div>
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="project-image"
+                />
                 <div className="portfolio-overlay">
                   <div className="project-info">
                     <h4>{project.title}</h4>

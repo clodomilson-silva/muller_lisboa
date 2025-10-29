@@ -10,12 +10,7 @@ const Services = () => {
       description: "Casas, sobrados e condomínios residenciais com acabamento de primeira qualidade.",
       features: ["Projetos personalizados", "Acompanhamento técnico", "Garantia de qualidade"]
     },
-    {
-      icon: <Building size={40} />,
-      title: "Montagem Industrial",
-      description: "Prédios comerciais, lojas, escritórios e espaços corporativos modernos.",
-      features: ["Soluções corporativas", "Prazos otimizados", "Tecnologia avançada"]
-    },
+    
     {
       icon: <Wrench size={40} />,
       title: "Reformas e Ampliações",

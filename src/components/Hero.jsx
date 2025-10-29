@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import './Hero.css';
+import heroImage from '../assets/images/hero/hero-main.jpg';
 
 const Hero = () => {
   return (
@@ -41,17 +42,45 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="hero-image">
-            <div className="image-placeholder">
-              <div className="floating-card card-1">
+          <div className="hero-image" style={{ 
+            position: 'relative',
+            minHeight: '600px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+            <div className="image-placeholder" style={{ 
+              position: 'relative',
+              width: '100%', 
+              maxWidth: '650px', 
+              height: '600px',
+              display: 'block'
+            }}>
+              <img 
+                src={heroImage} 
+                alt="Construção Muller & Lisboa" 
+                className="hero-main-image"
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover', 
+                  display: 'block',
+                  borderRadius: '24px',
+                  opacity: 1,
+                  visibility: 'visible',
+                  zIndex: 1,
+                  boxShadow: '0 25px 70px rgba(0, 0, 0, 0.25), 0 10px 25px rgba(0, 0, 0, 0.15)'
+                }}
+              />
+              <div className="floating-card card-1" style={{ position: 'absolute', zIndex: 100 }}>
                 <h4>+200</h4>
                 <p>Projetos Entregues</p>
               </div>
-              <div className="floating-card card-2">
+              <div className="floating-card card-2" style={{ position: 'absolute', zIndex: 100 }}>
                 <h4>2+</h4>
                 <p>Anos de Experiência</p>
               </div>
-              <div className="floating-card card-3">
+              <div className="floating-card card-3" style={{ position: 'absolute', zIndex: 100 }}>
                 <h4>100%</h4>
                 <p>Clientes Satisfeitos</p>
               </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Users, Calendar, Target } from 'lucide-react';
 import './About.css';
+import aboutImage from '../assets/images/about/about.jpeg';
 
 const About = () => {
   const stats = [
@@ -67,9 +68,11 @@ const About = () => {
 
           <div className="about-image">
             <div className="image-container">
-              <div className="about-img-placeholder">
-                <span>Imagem da Equipe</span>
-              </div>
+              <img 
+                src={aboutImage} 
+                alt="Equipe Muller & Lisboa" 
+                className="about-team-image"
+              />
             </div>
           </div>
         </div>
