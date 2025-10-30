@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
@@ -10,6 +11,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,18 +21,44 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aqui você implementaria o envio do formulário
-    console.log('Form submitted:', formData);
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      // Configure suas credenciais EmailJS em: https://www.emailjs.com/
+      // SERVICE_ID, TEMPLATE_ID e PUBLIC_KEY você obterá ao criar sua conta
+      const result = await emailjs.send(
+        'YOUR_SERVICE_ID',      // Substitua pelo seu Service ID
+        'YOUR_TEMPLATE_ID',     // Substitua pelo seu Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'mullerlisboaconstrutora@gmail.com'
+        },
+        'YOUR_PUBLIC_KEY'       // Substitua pela sua Public Key
+      );
+
+      console.log('Email enviado com sucesso:', result.text);
+      alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+      
+      // Limpa o formulário
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      alert('Erro ao enviar mensagem. Por favor, tente novamente ou entre em contato via WhatsApp.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -183,9 +211,9 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="submit-btn" disabled={isSubmitting}>
                 <Send size={18} />
-                Enviar Mensagem
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
               </button>
             </form>
           </div>
