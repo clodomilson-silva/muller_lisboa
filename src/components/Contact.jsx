@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
@@ -13,6 +13,12 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Inicializa o EmailJS quando o componente é montado
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    console.log('EmailJS inicializado com Public Key');
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -26,20 +32,24 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Configure suas credenciais EmailJS em: https://www.emailjs.com/
-      // SERVICE_ID, TEMPLATE_ID e PUBLIC_KEY você obterá ao criar sua conta
+      // Parâmetros do template - devem corresponder exatamente às variáveis no EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message
+      };
+
+      console.log('Enviando email com os parâmetros:', templateParams);
+      console.log('Service ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
+      console.log('Template ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+
+      // Como já inicializamos o EmailJS no useEffect, não precisamos passar a Public Key aqui
       const result = await emailjs.send(
-        'YOUR_SERVICE_ID',      // Substitua pelo seu Service ID
-        'YOUR_TEMPLATE_ID',     // Substitua pelo seu Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: 'mullerlisboaconstrutora@gmail.com'
-        },
-        'YOUR_PUBLIC_KEY'       // Substitua pela sua Public Key
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams
       );
 
       console.log('Email enviado com sucesso:', result.text);
@@ -54,8 +64,26 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
-      console.error('Erro ao enviar email:', error);
-      alert('Erro ao enviar mensagem. Por favor, tente novamente ou entre em contato via WhatsApp.');
+      console.error('Erro completo ao enviar email:', error);
+      console.error('Status do erro:', error.status);
+      console.error('Texto do erro:', error.text);
+      
+      let errorMessage = 'Erro ao enviar mensagem. ';
+      
+      if (error.status === 412) {
+        errorMessage += 'Erro de configuração do EmailJS. Verifique:\n' +
+                       '- Service ID está correto\n' +
+                       '- Template está ativo e publicado\n' +
+                       '- Serviço de email está conectado';
+      } else if (error.status === 400) {
+        errorMessage += 'Dados inválidos. Verifique os campos do formulário.';
+      } else if (error.status === 403) {
+        errorMessage += 'Acesso negado. Verifique a Public Key.';
+      } else {
+        errorMessage += 'Por favor, tente novamente ou entre em contato via WhatsApp.';
+      }
+      
+      alert(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
