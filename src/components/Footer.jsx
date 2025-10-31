@@ -82,7 +82,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p>&copy; 2025 Muller & Lisboa Construtora. Todos os direitos reservados.</p>
-            <p>Desenvolvido com ❤️ para construir o futuro</p>
+            <p>Desenvolvido com TechVerse Solutions, para construir o futuro</p>
           </div>
         </div>
       </div>
